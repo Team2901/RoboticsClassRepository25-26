@@ -5,7 +5,6 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.hardware.AngleUtilities;
 
-
 public class ImprovedGamepad {
 
     private final static float DEFAULT_STICK_DEAD_ZONE_VALUE = 0.1f;
