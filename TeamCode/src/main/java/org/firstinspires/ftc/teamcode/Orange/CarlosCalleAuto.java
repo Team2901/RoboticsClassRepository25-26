@@ -14,7 +14,6 @@ public class CarlosCalleAuto extends AbstractAutonomous {
         waitForStart();
         turnToAngle(90);
 
-
     }
 }
 
