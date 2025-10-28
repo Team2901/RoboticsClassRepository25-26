@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import org.firstinspires.ftc.teamcode.autonomous.AbstractAutonomous;
 
 @Autonomous(name="TylerAuto")
-public class Tyler extends AbstractAutonomous{
+public class Tyler extends AbstractAutonomous{ //firstauto
 
     @Override
     public void runOpMode() throws InterruptedException {
