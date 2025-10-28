@@ -7,6 +7,8 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
+import org.firstinspires.ftc.robotcore.external.Telemetry;
+
 /**
  * Created by Allenn23825 on 1/24/2023.
  */
@@ -23,7 +25,7 @@ public class UpdatedClawbotHardware {
 
 
 
-    public void init(HardwareMap hardwareMap) {
+    public void init(HardwareMap hardwareMap, Telemetry telemetry) {
         leftDrive = hardwareMap.get(DcMotorEx.class, "leftDrive");
         rightDrive = hardwareMap.get(DcMotorEx.class, "rightDrive");
         arm = hardwareMap.get(DcMotorEx.class, "arm");
