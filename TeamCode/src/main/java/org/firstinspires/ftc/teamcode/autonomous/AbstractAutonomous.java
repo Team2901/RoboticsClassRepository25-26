@@ -8,7 +8,8 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 
 import org.firstinspires.ftc.teamcode.hardware.RobotHardware;
 
-//declaring as an abstract class--meaning it doesn't do anything on its own
+// declaring as an abstract class--meaning it doesn't do anything on its own
+// doesn't have the @Autonomous or @Teleop at the beginning, meaning it isn't visible on driver station
 public abstract class AbstractAutonomous extends LinearOpMode{
     public RobotHardware robot = new RobotHardware();
     public void move(double yInches, double xInches) {
