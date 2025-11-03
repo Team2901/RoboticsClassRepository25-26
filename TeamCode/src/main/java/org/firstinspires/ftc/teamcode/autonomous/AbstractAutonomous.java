@@ -1,4 +1,4 @@
-//places where needed code is imported from other classes to eliminate
+//places where needed code is imported from other packages to eliminate
 // repetitiveness and rewriting
 package org.firstinspires.ftc.teamcode.autonomous;
 
