@@ -11,6 +11,7 @@ public abstract class AbstractAutonomous extends LinearOpMode{
         int ticksY = (int) (yInches * RobotHardware.TICKS_PER_INCH);
         int ticksX = (int) (xInches * (RobotHardware.TICKS_PER_INCH /0.9));
 
+        //setting motor encoders and motors
         robot.frontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.frontRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.backLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -54,6 +55,7 @@ public abstract class AbstractAutonomous extends LinearOpMode{
         robot.backRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
+    //printing data onto driver station
     private void telemetryLog(DcMotorEx dcMotorEx) {
         telemetry.addData("angle", robot.getAngle());
         telemetry.addData("target angle", robot.robotTargetAngle);
@@ -73,6 +75,9 @@ public abstract class AbstractAutonomous extends LinearOpMode{
         telemetry.update();
     }
 
+    //turning to angle (starting robot = robot thinks it's at 0, when turning to 90 it
+    // will go to 90 deg no matter where it's at currently = if at 60 deg it will turn
+    // 30 deg till arriving at 90)
     public void turnToAngle(double turnAngle) {
             //robot.getAngle is between -180 and 180, starting at 0
         double turnPower = robot.getTurnToAngleSpeed(turnAngle);
@@ -85,12 +90,15 @@ public abstract class AbstractAutonomous extends LinearOpMode{
             turnPower = robot.getTurnToAngleSpeed(turnAngle);
             telemetryLog(robot.frontLeft);
         }
+        //setting motors to 0 so not running when unintended
         robot.frontLeft.setPower(0);
         robot.frontRight.setPower(0);
         robot.backRight.setPower(0);
         robot.backLeft.setPower(0);
     }
 
+    //turning relative to where robot is now (will turn 90 deg even if angling at
+    // 90 deg = ending 180 from starting angle 0)
     public void turnRelative(double relativeAngle) {
         double targetAngle = (robot.getAngle() + relativeAngle);
         turnToAngle(targetAngle);
