@@ -1,3 +1,5 @@
+//places where needed code is imported from other classes to eliminate
+// repetitiveness and rewriting
 package org.firstinspires.ftc.teamcode.autonomous;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -5,6 +7,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 
 import org.firstinspires.ftc.teamcode.hardware.RobotHardware;
+
+//declaring as an abstract class--meaning it doesn't do anything on its own
 public abstract class AbstractAutonomous extends LinearOpMode{
     public RobotHardware robot = new RobotHardware();
     public void move(double yInches, double xInches) {
