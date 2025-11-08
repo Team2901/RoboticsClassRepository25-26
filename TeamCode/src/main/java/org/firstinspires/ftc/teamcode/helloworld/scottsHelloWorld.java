@@ -1,8 +1,10 @@
-package org.firstinspires.ftc.teamcode.Brown;
+package org.firstinspires.ftc.teamcode.helloworld;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-public class wyattHelloWorld extends OpMode {
+@TeleOp
+class scottsHelloWorld extends OpMode {
     @Override
     public void init() {
         telemetry.addLine("Hello World");
@@ -10,6 +12,6 @@ public class wyattHelloWorld extends OpMode {
 
     @Override
     public void loop() {
-
     }
 }
+ 
