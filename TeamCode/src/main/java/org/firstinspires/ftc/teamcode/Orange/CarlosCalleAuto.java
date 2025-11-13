@@ -14,7 +14,6 @@ public class CarlosCalleAuto extends AbstractAutonomous {
         robot.init(this.hardwareMap, telemetry);
         waitForStart();
         turnToAngle(90);
-
     }
 }
 

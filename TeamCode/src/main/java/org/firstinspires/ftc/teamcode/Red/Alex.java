@@ -13,6 +13,5 @@ public class Alex extends AbstractAutonomous {
         waitForStart();
         move(2,9);
         turnRelative(2);
-
     }
 }   
