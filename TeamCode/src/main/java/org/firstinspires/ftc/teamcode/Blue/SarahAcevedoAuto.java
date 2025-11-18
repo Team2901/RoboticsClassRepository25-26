@@ -26,7 +26,7 @@ public class SarahAcevedoAuto extends AbstractAutonomous{
         turnRelative(90);
         move(12, 0);
         turnRelative(90);
-        sleep(100);
+        sleep(1000);
     }
 
 }
