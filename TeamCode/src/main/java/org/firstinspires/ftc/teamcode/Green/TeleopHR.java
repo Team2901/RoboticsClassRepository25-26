@@ -9,11 +9,10 @@ import org.firstinspires.ftc.teamcode.hardware.ImprovedGamepad;
 import org.firstinspires.ftc.teamcode.hardware.OutreachHardware;
 
 @TeleOp (name="TeleopHR")
-public abstract class TeleopHR extends OpMode  {
+public class TeleopHR extends OpMode  {
     public OutreachHardware robot = new OutreachHardware();
     ImprovedGamepad gamepad;
 
-    private HardwareMap hardwareMap;
     @Override
     public void init() {
         gamepad = new ImprovedGamepad(gamepad1, new ElapsedTime(), "Gamepad");
@@ -28,7 +27,7 @@ public abstract class TeleopHR extends OpMode  {
         leftMotorPower += gamepad.left_stick_y.getValue() / 2;
         rightMotorPower += gamepad.left_stick_y.getValue() / 2;
 
-        if(gamepad.right_stick_x.getValue() > 0) {
+        if(gamepad.right_stick_x.getValue() < 0) {
             leftMotorPower += gamepad.right_stick_x.getValue() / -2;
         } else {
             rightMotorPower += Math.abs(gamepad.right_stick_x.getValue() / -2);
