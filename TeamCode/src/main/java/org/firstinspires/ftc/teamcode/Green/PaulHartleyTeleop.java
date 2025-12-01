@@ -12,11 +12,11 @@ import org.firstinspires.ftc.teamcode.hardware.OutreachHardware;
 public class PaulHartleyTeleop extends OpMode {
     public OutreachHardware robot = new OutreachHardware();
     ImprovedGamepad gamepad;
-    private HardwareMap harwareMap;
+    private HardwareMap hardwareMap;
 
     public void init(){
         gamepad = new ImprovedGamepad(gamepad1, new ElapsedTime(),"Gamepad");
-        robot.init(this.harwareMap);
+        robot.init(this.hardwareMap);
     }
 
     public void loop(){
