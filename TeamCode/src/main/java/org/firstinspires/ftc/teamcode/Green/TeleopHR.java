@@ -19,7 +19,7 @@ public abstract class TeleopHR extends OpMode  {
         gamepad = new ImprovedGamepad(gamepad1, new ElapsedTime(), "Gamepad");
         robot.init(this.hardwareMap);
     }
-
+    @Override
     public void loop() {
         gamepad.update();
 
