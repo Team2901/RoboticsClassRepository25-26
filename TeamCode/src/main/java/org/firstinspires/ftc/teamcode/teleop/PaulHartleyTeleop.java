@@ -29,10 +29,10 @@ public class PaulHartleyTeleop extends OpMode {
         leftMotorPower += gamepad.left_stick_y.getValue() / 2;
         rightMotorPower += gamepad.left_stick_y.getValue() / 2;
 
-        if(gamepad.right_stick_y.getValue() > 0){
-            leftMotorPower += gamepad.left_stick_y.getValue() / 2;
+        if(gamepad.right_stick_x.getValue() > 0){
+            leftMotorPower += gamepad.right_stick_x.getValue() / 2;
         } else {
-            rightMotorPower += Math.abs(gamepad.left_stick_y.getValue() / 2);
+            rightMotorPower += Math.abs(gamepad.right_stick_x.getValue() / 2);
         }
 
         robot.leftDrive.setPower(leftMotorPower);
