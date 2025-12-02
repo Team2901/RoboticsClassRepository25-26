@@ -12,13 +12,14 @@ import org.firstinspires.ftc.teamcode.hardware.OutreachHardware;
 public class PaulHartleyTeleop extends OpMode {
     public OutreachHardware robot = new OutreachHardware();
     ImprovedGamepad gamepad;
-    private HardwareMap hardwareMap;
 
+    @Override
     public void init(){
         gamepad = new ImprovedGamepad(gamepad1, new ElapsedTime(),"Gamepad");
         robot.init(this.hardwareMap);
     }
 
+    @Override
     public void loop(){
         gamepad.update();
 
@@ -29,15 +30,9 @@ public class PaulHartleyTeleop extends OpMode {
         rightMotorPower += gamepad.left_stick_y.getValue() / 2;
 
         if(gamepad.right_stick_x.getValue() > 0){
-            leftMotorPower += gamepad.left_stick_x.getValue() / 2;
+            leftMotorPower += gamepad.right_stick_x.getValue() / 2;
         } else {
-            rightMotorPower += Math.abs(gamepad.left_stick_x.getValue() / 2);
-        }
-
-        if(gamepad.right_stick_x.getValue() < 0){
-            leftMotorPower -= gamepad.left_stick_x.getValue() / 2;
-        } else {
-            rightMotorPower -= Math.abs(gamepad.left_stick_x.getValue() / 2);
+            rightMotorPower += Math.abs(gamepad.right_stick_x.getValue() / 2);
         }
 
         robot.leftDrive.setPower(leftMotorPower);
