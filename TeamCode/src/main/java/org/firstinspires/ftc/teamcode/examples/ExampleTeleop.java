@@ -1,7 +1,10 @@
-package org.firstinspires.ftc.teamcode.hardware;
+package org.firstinspires.ftc.teamcode.examples;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
+
+import org.firstinspires.ftc.teamcode.hardware.ImprovedGamepad;
+import org.firstinspires.ftc.teamcode.hardware.OutreachHardware;
 
 public class ExampleTeleop extends OpMode {
     public OutreachHardware robot = new OutreachHardware();
