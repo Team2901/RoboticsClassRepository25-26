@@ -1,9 +1,10 @@
-package org.firstinspires.ftc.teamcode.Blue;
+package org.firstinspires.ftc.teamcode.teleop;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.hardware.ImprovedGamepad;
 import org.firstinspires.ftc.teamcode.hardware.OutreachHardware;
 
@@ -20,11 +21,12 @@ public class SarahAcevedoTeleOp extends OpMode {
     }
     @Override
     public void loop(){
-        gamepad. update();
+        gamepad.update();
+        telemetry.update();
         double leftMotorPower = 0;
         double rightMotorPower = 0;
-        leftMotorPower += gamepad.left_stick_x.getValue()/2;
-        rightMotorPower += gamepad. left_stick_x. getValue()/2;
+        leftMotorPower += gamepad.left_stick_y.getValue()/2;
+        rightMotorPower += gamepad.left_stick_y.getValue()/2;
         if(gamepad.right_stick_x.getValue() > 0) {
             leftMotorPower += gamepad.right_stick_x.getValue()/2;
         } else{

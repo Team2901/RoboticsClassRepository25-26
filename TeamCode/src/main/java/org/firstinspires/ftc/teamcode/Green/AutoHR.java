@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.Green;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.autonomous.AbstractAutonomous;
 
