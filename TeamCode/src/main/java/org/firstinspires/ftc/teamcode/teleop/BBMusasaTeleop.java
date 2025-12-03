@@ -1,12 +1,14 @@
 package org.firstinspires.ftc.teamcode.teleop;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.hardware.ImprovedGamepad;
 import org.firstinspires.ftc.teamcode.hardware.OutreachHardware;
 
-public abstract class RobotTeleOp extends OpMode {
+@TeleOp (name="BBMusasaTeleop")
+public abstract class BBMusasaTeleop extends OpMode {
     public OutreachHardware robot = new OutreachHardware();
     ImprovedGamepad gamepad;
 
