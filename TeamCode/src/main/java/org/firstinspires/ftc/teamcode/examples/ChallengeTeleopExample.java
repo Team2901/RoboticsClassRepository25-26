@@ -39,10 +39,9 @@ public class ChallengeTeleopExample extends LinearOpMode {
 
     final double ARM_TICKS_PER_DEGREE =
             28 // encoder ticks per motor rotation
-                    * 250047.0 / 4913.0 // This is the exact gear ratio of the 50.9:1 Yellow Jacket gearbox
-                    * 100.0 / 20.0 // This is the external gear reduction, a 20T pinion gear that drives a 100T hub-mount gear
-                    * 1/360.0; // we want ticks per degree, not per rotation
-
+                    * 19.2 // This is the exact gear ratio of the 50.9:1 Yellow Jacket gearbox
+                    * (100.0 / 20.0) // This is the external gear reduction, a 20T pinion gear that drives a 100T hub-mount gear
+                    * (1/360.0); // we want ticks per degree, not per rotation
 
     /* These constants hold the position that the arm is commanded to run to.
     These are relative to where the arm was located when you start the OpMode. So make sure the
