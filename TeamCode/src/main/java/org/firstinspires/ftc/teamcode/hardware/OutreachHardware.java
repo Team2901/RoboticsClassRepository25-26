@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.Servo;
 
 /**
  * Created by Allenn23825 on 1/24/2023.
@@ -11,6 +12,8 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 public class OutreachHardware {
     public DcMotorEx leftDrive;
     public DcMotorEx rightDrive;
+    public DcMotorEx arm;
+    public Servo intake;
 
     public static final double COUNTS_PER_INCH = 530;
 
