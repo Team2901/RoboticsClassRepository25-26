@@ -279,6 +279,23 @@ public class MidtermCodeHR extends LinearOpMode {
             //Right Trigger on Gamepad => small UP adjustments
             //Left Trigger on Gamepad => small DOWN adjustments
 
+            //Left Stick Y -> forward/backward
+            //Right Stick X -> turning left/right
+            //D-pade left ->
+            //D-pad right ->
+            //D-pad up ->
+            //D-pad down ->
+            //A button -> intake object
+            //X button -> release intake
+            //B button ->
+            //Y button ->
+            //Right bumper ->
+            //Left bumper ->
+            //Right trigger ->
+            //Left trigger ->
+
+
+
 // --------------------------------------------------------------------------------------------------------------
 //// move arm motor to target position
 
