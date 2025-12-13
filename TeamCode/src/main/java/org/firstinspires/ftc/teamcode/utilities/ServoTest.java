@@ -57,7 +57,7 @@ public class ServoTest extends OpMode {
         if (gamepad1.yWasPressed()){
             position += 0.1;
         }
-        if (gamepad1.bWasPressed()){
+        if (gamepad1.aWasPressed()){
             position -= 0.1;
         }
 
