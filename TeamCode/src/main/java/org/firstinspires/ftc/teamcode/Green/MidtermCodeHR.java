@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.examples;
+package org.firstinspires.ftc.teamcode.Green;
 
 //// These import statements allow us to use the FTC SDK classes.
 //// They give us access to motors, servos, robot hardware, and OpMode features.
@@ -13,12 +13,11 @@ import com.qualcomm.robotcore.hardware.Servo;
 import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
 
 // --------------------------------------------------------------------------------------------------------------
+@TeleOp(name = "MidtermCodeHR")
+public class MidtermCodeHR extends LinearOpMode {
 
-@TeleOp(name = "ChallengeTeleopExample")
-public class ChallengeTeleopExample extends LinearOpMode {
-
-//// These variables represent the different moving parts of the robot.
-//// Each one will connect to a real piece of hardware on the control hub.
+    //// These variables represent the different moving parts of the robot.
+    //// Each one will connect to a real piece of hardware on the control hub.
     public DcMotor leftDrive = null; // Motor that drives the left wheel of the robot
     public DcMotor rightDrive = null; // Motor that drives the right wheel of the robot
     public DcMotor armMotor = null; // Motor that lifts and lowers the robot's arm
@@ -101,8 +100,8 @@ public class ChallengeTeleopExample extends LinearOpMode {
 
 
         // Connecting motors and servos to the configuration on the driver hub
-        leftDrive = hardwareMap.get(DcMotor.class, "leftDrive"); //the left drivetrain motor
-        rightDrive = hardwareMap.get(DcMotor.class, "rightDrive"); //the right drivetrain motor
+        leftDrive = hardwareMap.get(DcMotor.class, "frontLeft"); //the left drivetrain motor
+        rightDrive = hardwareMap.get(DcMotor.class, "frontRight"); //the right drivetrain motor
         armMotor = hardwareMap.get(DcMotor.class, "arm"); //the arm motor
 
         //One motor is reversed because of how they are mounted
@@ -144,9 +143,9 @@ public class ChallengeTeleopExample extends LinearOpMode {
         while (opModeIsActive()) {
 
 //// DRIVING ROBOT CONTROLS
-        //Left Stick Y => forward/backward
-        //Right Stick X => turning left/right
-        //Motors are mixed together to create smoother driving
+            //Left Stick Y => forward/backward
+            //Right Stick X => turning left/right
+            //Motors are mixed together to create smoother driving
 
             /* Set the drive and turn variables to follow the joysticks on the gamepad.
             the joysticks decrease as you push them up. So reverse the Y axis. */
@@ -262,23 +261,40 @@ public class ChallengeTeleopExample extends LinearOpMode {
 
             armPositionFudgeFactor = FUDGE_FACTOR * (gamepad1.right_trigger + (-gamepad1.left_trigger));
 
-////SUMMARY OF GAMEPAD CONTROLS:
-        //Left Stick Y => forward/backward
-        //Right Stick X => turning left/right
-        //Motors are mixed together to create smoother driving
-        //FUDGE_FACTOR => fine adjustments using triggers
-        //A Button => bringing element into intake
-        //X Button => turning intake off
-        //B Button => releasing element out of intake
-        //Right Bumper => intaking/collecting arm position
-        //Left Bumper => 20° up from the collecting position in order to clear the barrier (FTC INTO THE DEEP GAME)
-        //Y Button => correct height to score the element in the LOW BASKET (FTC INTO THE DEEP GAME)
-        //D-pad Left => turns off intake, folding in the wrist, and moving arm back to resting position inside robot
-        //D-pad Right => correct height to score the element in the HIGH CHAMBER (FTC INTO THE DEEP GAME)
-        //D-pad Up => sets the arm vertically to hook onto LOW RUNG for hanging (FTC INTO THE DEEP GAME)
-        //D-pad Down => moves the arm down to lift robot up once hooked onto rung (FTC INTO THE DEEP GAME)
-        //Right Trigger on Gamepad => small UP adjustments
-        //Left Trigger on Gamepad => small DOWN adjustments
+////SUMMARY OF GAMEPAD CONTROLS:q
+            //Left Stick Y => forward/backward
+            //Right Stick X => turning left/right
+            //Motors are mixed together to create smoother driving
+            //FUDGE_FACTOR => fine adjustments using triggers
+            //A Button => bringing element into intake
+            //X Button => turning intake off
+            //B Button => releasing element out of intake
+            //Right Bumper => intaking/collecting arm position
+            //Left Bumper => 20° up from the collecting position in order to clear the barrier (FTC INTO THE DEEP GAME)
+            //Y Button => correct height to score the element in the LOW BASKET (FTC INTO THE DEEP GAME)
+            //D-pad Left => turns off intake, folding in the wrist, and moving arm back to resting position inside robot
+            //D-pad Right => correct height to score the element in the HIGH CHAMBER (FTC INTO THE DEEP GAME)
+            //D-pad Up => sets the arm vertically to hook onto LOW RUNG for hanging (FTC INTO THE DEEP GAME)
+            //D-pad Down => moves the arm down to lift robot up once hooked onto rung (FTC INTO THE DEEP GAME)
+            //Right Trigger on Gamepad => small UP adjustments
+            //Left Trigger on Gamepad => small DOWN adjustments
+
+            //Left Stick Y -> forward/backward
+            //Right Stick X -> turning left/right
+            //D-pade left -> arm down
+            //D-pad right -> arm up
+            //D-pad up -> arm up
+            //D-pad down -> arm down
+            //A button -> intake object
+            //X button -> stop intake
+            //B button -> intake release
+            //Y button -> down a little bit
+            //Right bumper -> up and intake object
+            //Left bumper -> moves arms a little
+            //Right trigger -> moves arm up a little
+            //Left trigger -> moves arm down a little
+
+
 
 // --------------------------------------------------------------------------------------------------------------
 //// move arm motor to target position

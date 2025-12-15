@@ -1,24 +1,22 @@
-package org.firstinspires.ftc.teamcode.examples;
+package org.firstinspires.ftc.teamcode.Orange;
 
 //// These import statements allow us to use the FTC SDK classes.
 //// They give us access to motors, servos, robot hardware, and OpMode features.
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.Servo;
-
+//
 import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
 
 // --------------------------------------------------------------------------------------------------------------
 
-@TeleOp(name = "ChallengeTeleopExample")
-public class ChallengeTeleopExample extends LinearOpMode {
+public class CarloCalleArm extends LinearOpMode {
 
-//// These variables represent the different moving parts of the robot.
-//// Each one will connect to a real piece of hardware on the control hub.
+    //// These variables represent the different moving parts of the robot.
+    //// Each one will connect to a real piece of hardware on the control hub.
     public DcMotor leftDrive = null; // Motor that drives the left wheel of the robot
     public DcMotor rightDrive = null; // Motor that drives the right wheel of the robot
     public DcMotor armMotor = null; // Motor that lifts and lowers the robot's arm
@@ -41,7 +39,7 @@ public class ChallengeTeleopExample extends LinearOpMode {
 
     final double ARM_TICKS_PER_DEGREE =
             28 // encoder ticks per motor rotation
-                    * 19.2 // This is the gear ratio of the motor used on your robot
+                    * 19.2 // This is the exact gear ratio of the 50.9:1 Yellow Jacket gearbox
                     * (100.0 / 20.0) // This is the external gear reduction, a 20T pinion gear that drives a 100T hub-mount gear
                     * (1/360.0); // we want ticks per degree, not per rotation
 
@@ -101,8 +99,8 @@ public class ChallengeTeleopExample extends LinearOpMode {
 
 
         // Connecting motors and servos to the configuration on the driver hub
-        leftDrive = hardwareMap.get(DcMotor.class, "leftDrive"); //the left drivetrain motor
-        rightDrive = hardwareMap.get(DcMotor.class, "rightDrive"); //the right drivetrain motor
+        leftDrive = hardwareMap.get(DcMotor.class, "frontLeft"); //the left drivetrain motor
+        rightDrive = hardwareMap.get(DcMotor.class, "frontRight"); //the right drivetrain motor
         armMotor = hardwareMap.get(DcMotor.class, "arm"); //the arm motor
 
         //One motor is reversed because of how they are mounted
@@ -144,9 +142,9 @@ public class ChallengeTeleopExample extends LinearOpMode {
         while (opModeIsActive()) {
 
 //// DRIVING ROBOT CONTROLS
-        //Left Stick Y => forward/backward
-        //Right Stick X => turning left/right
-        //Motors are mixed together to create smoother driving
+            //Left Stick Y => forward/backward
+            //Right Stick X => turning left/right
+            //Motors are mixed together to create smoother driving
 
             /* Set the drive and turn variables to follow the joysticks on the gamepad.
             the joysticks decrease as you push them up. So reverse the Y axis. */
@@ -263,22 +261,22 @@ public class ChallengeTeleopExample extends LinearOpMode {
             armPositionFudgeFactor = FUDGE_FACTOR * (gamepad1.right_trigger + (-gamepad1.left_trigger));
 
 ////SUMMARY OF GAMEPAD CONTROLS:
-        //Left Stick Y => forward/backward
-        //Right Stick X => turning left/right
-        //Motors are mixed together to create smoother driving
-        //FUDGE_FACTOR => fine adjustments using triggers
-        //A Button => bringing element into intake
-        //X Button => turning intake off
-        //B Button => releasing element out of intake
-        //Right Bumper => intaking/collecting arm position
-        //Left Bumper => 20° up from the collecting position in order to clear the barrier (FTC INTO THE DEEP GAME)
-        //Y Button => correct height to score the element in the LOW BASKET (FTC INTO THE DEEP GAME)
-        //D-pad Left => turns off intake, folding in the wrist, and moving arm back to resting position inside robot
-        //D-pad Right => correct height to score the element in the HIGH CHAMBER (FTC INTO THE DEEP GAME)
-        //D-pad Up => sets the arm vertically to hook onto LOW RUNG for hanging (FTC INTO THE DEEP GAME)
-        //D-pad Down => moves the arm down to lift robot up once hooked onto rung (FTC INTO THE DEEP GAME)
-        //Right Trigger on Gamepad => small UP adjustments
-        //Left Trigger on Gamepad => small DOWN adjustments
+            //Left Stick Y => forward/backward
+            //Right Stick X => turning left/right
+            //Motors are mixed together to create smoother driving
+            //FUDGE_FACTOR => fine adjustments using triggers
+            //A Button => bringing element into intake
+            //X Button => turning intake off
+            //B Button => releasing element out of intake
+            //Right Bumper => intaking/collecting arm position
+            //Left Bumper => 20° up from the collecting position in order to clear the barrier (FTC INTO THE DEEP GAME)
+            //Y Button => correct height to score the element in the LOW BASKET (FTC INTO THE DEEP GAME)
+            //D-pad Left => turns off intake, folding in the wrist, and moving arm back to resting position inside robot
+            //D-pad Right => correct height to score the element in the HIGH CHAMBER (FTC INTO THE DEEP GAME)
+            //D-pad Up => sets the arm vertically to hook onto LOW RUNG for hanging (FTC INTO THE DEEP GAME)
+            //D-pad Down => moves the arm down to lift robot up once hooked onto rung (FTC INTO THE DEEP GAME)
+            //Right Trigger on Gamepad => small UP adjustments
+            //Left Trigger on Gamepad => small DOWN adjustments
 
 // --------------------------------------------------------------------------------------------------------------
 //// move arm motor to target position
