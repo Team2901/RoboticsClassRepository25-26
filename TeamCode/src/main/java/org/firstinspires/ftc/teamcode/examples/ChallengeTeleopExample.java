@@ -101,8 +101,8 @@ public class ChallengeTeleopExample extends LinearOpMode {
 
 
         // Connecting motors and servos to the configuration on the driver hub
-        leftDrive = hardwareMap.get(DcMotor.class, "frontLeft"); //the left drivetrain motor
-        rightDrive = hardwareMap.get(DcMotor.class, "frontRight"); //the right drivetrain motor
+        leftDrive = hardwareMap.get(DcMotor.class, "leftDrive"); //the left drivetrain motor
+        rightDrive = hardwareMap.get(DcMotor.class, "rightDrive"); //the right drivetrain motor
         armMotor = hardwareMap.get(DcMotor.class, "arm"); //the arm motor
 
         //One motor is reversed because of how they are mounted
