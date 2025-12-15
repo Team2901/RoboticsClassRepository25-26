@@ -261,7 +261,7 @@ public class MidtermCodeHR extends LinearOpMode {
 
             armPositionFudgeFactor = FUDGE_FACTOR * (gamepad1.right_trigger + (-gamepad1.left_trigger));
 
-////SUMMARY OF GAMEPAD CONTROLS:
+////SUMMARY OF GAMEPAD CONTROLS:q
             //Left Stick Y => forward/backward
             //Right Stick X => turning left/right
             //Motors are mixed together to create smoother driving
@@ -281,18 +281,18 @@ public class MidtermCodeHR extends LinearOpMode {
 
             //Left Stick Y -> forward/backward
             //Right Stick X -> turning left/right
-            //D-pade left ->
-            //D-pad right ->
-            //D-pad up ->
-            //D-pad down ->
+            //D-pade left -> arm down
+            //D-pad right -> arm up
+            //D-pad up -> arm up
+            //D-pad down -> arm down
             //A button -> intake object
-            //X button -> release intake
-            //B button ->
-            //Y button ->
-            //Right bumper ->
-            //Left bumper ->
-            //Right trigger ->
-            //Left trigger ->
+            //X button -> stop intake
+            //B button -> intake release
+            //Y button -> down a little bit
+            //Right bumper -> up and intake object
+            //Left bumper -> moves arms a little
+            //Right trigger -> moves arm up a little
+            //Left trigger -> moves arm down a little
 
 
 
